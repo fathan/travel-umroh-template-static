@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.14.8/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="assets/style.css">
+
+  <title>Travel Umroh</title>
+</head>
+<body>
+  <header class="border-b border-gray-200 text-sm text-gray-600">
+    <div class="flex items-center justify-between px-6 py-2 bg-white max-w-7xl mx-auto">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1">
+          <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+          <span class="text-sm lg:text-base">Indonesia</span>
+        </span>
+        <span class="text-sm lg:text-base"><strong>Phone:</strong> 08112024000</span>
+        <span class="text-sm lg:text-base"><strong>Email:</strong> info@alhasan.com</span>
+      </div>
+
+      <div class="flex flex-row items-center gap-4">
+        <a href="#" class="flex items-center gap-1">
+          <span class="text-sm lg:text-base">Login</span>
+        </a>
+        |
+        <a href="#" class="flex items-center gap-1">
+          <span class="text-sm lg:text-base">Register</span>
+        </a>
+        |
+        <a href="#" class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c3.042 0 5.824 1.016 7.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="text-sm lg:text-base">Akun</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row items-center justify-between px-6 py-4 bg-white gap-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="https://www.arminarekaperdana.com/images/logo-arp-black.png" alt="Logo Arminareka" class="h-18" />
+      </a>
+      <nav class="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600 text-sm lg:text-base font-medium">
+        <a href="index.html" class="hover:text-blue-600">Beranda</a>
+        
+        <div class="relative group">
+          <button class="hover:text-blue-600 flex items-center gap-1">
+            Profil
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
+            @mouseenter="show = true"
+            @mouseleave="show = false"
+          >
+            <a href="about-us.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tentang Kami</a>
+            <a href="license.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Perizinan</a>
+            <a href="term-and-condition.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Term & Condition</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="hover:text-blue-600 flex items-center gap-1">
+            Layanan
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
+            @mouseenter="show = true"
+            @mouseleave="show = false"
+          >
+            <a href="package.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Paket Umrah</a>
+            <a href="package.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Paket Haji</a>
+          </div>
+        </div>
+        
+        <div class="relative group">
+          <button class="hover:text-blue-600 flex items-center gap-1">
+            Informasi
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
+            @mouseenter="show = true"
+            @mouseleave="show = false"
+          >
+            <a href="article.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Artikel</a>
+            <a href="gallery.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galeri</a>
+            <a href="testimonial.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Testimonial</a>
+            <a href="affiliate.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Affiliate</a>
+          </div>
+        </div>
+
+        <a href="#" class="hover:text-blue-600">Kontak Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <!--  CONTENT AREA START -->
+
+  <section class="relative overflow-hidden h-40">
+    <img src="https://lab.khasanahtravel.com/wp-content/uploads/2024/08/banner-umrah-3.jpg" alt="Umrah Marjan Landing Jeddah Juli 2025" class="w-full h-full object-cover">
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black opacity-50"></div>
+    <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+      <h2 class="text-white text-2xl md:text-4xl font-bold text-center">
+        Term & Condition
+      </h2>
+    </div>
+  </section>
+
+  <section class="bg-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="">
+        <p>Berikut ini syarat dan ketentuan dalam pendaftaran product tour atau service lainnya dari Avia Tour. Sebaiknya Anda membaca dengan jelas syarat dan kondisi di bawah sebelum mendaftar. Dengan melanjutkan dan melakukan reservasi serta pembayaran deposit, maka Anda dianggap telah memahami dan menerima kondisi di bawah ini.</p><br><br>
+        <h1>TOUR BOOKING</h1>
+        <p>Pendaftaran peserta tour dapat melalui telepon &amp; email yang tercantum di dalam website www.avia.travel. Harga tour, visa, airport tax, fuel surcharge dapat berubah sewaktu-waktu dengan/tanpa pemberitahuan terlebih dahulu, jika terjadi perubahan nilai tukar (kurs) atau kenaikan tarif penerbangan.</p><br><br>
+        <h4>PENDAFTARAN &amp; PELUNASAN :</h4>
+        <ul>
+          <li>Pendaftaran dengan melampirkan paspor yang masih berlaku minimal 6 bulan (untuk beberapa rute tertentu minimal 1 tahun) dan Deposit biaya tour sebesar Idr 5.000.000/peserta atau sesuai dengan acara perjalanan yang dipilih dan ditambah biaya visa (apabila ada).</li>
+          <li>Pembayaran melalui transfer ditujukan ke rekening a.n. PT Fiwi Lestari Internasional.</li>
+          <li>Pembayaran dilakukan dalam mata uang rupiah, dengan jumlah sesuai dengan yang tertera tanpa penanggungan biaya bank atau biaya lainnya.</li>
+          <li>Pelunasan biaya tour paling lambat 14 hari sebelum tanggal keberangkatan (down payment / deposit adalah non-refundable / tidak bisa dikembalikan kepada peserta). </li>
+          <li>Pendaftaran atau pemesanan tempat yang dilakukan melalui telepon akan ditunggu pembayaran depositnya atau pelunasannya beserta paspor paling lambat 2 hari setelah tanggal pemesanan/pendaftaran. </li>
+          <li>Pendaftaran yang dilakukan kurang dari 15 hari sebelum tanggal keberangkatan harus segera melunasi biaya tour.</li>
+        </ul><br><br>
+        <h4>BIAYA TOUR TERMASUK :</h4>
+        <ul>
+          <li>Ticket pesawat udara p.p kelas ekonomi (non-endorsable, non-refundable dan non-reroutable berdasarkan group fare atau harga promosi lainnya). Terkecuali sebelumnya telah diberitahukan bahwa biaya ticket penerbangan tidak termasuk. </li>
+          <li>Penginapan di hotel-hotel bertaraf internasional berdasarkan 2 (dua) orang dalam satu kamar (twin sharing).</li>
+          <li>Acara tour, transportasi (dalam bentuk rombongan) beserta semua ticket masuk, sesuai dengan acara perjalanan yang tercantum. </li>
+          <li>Makan sesuai dengan keterangan yang tercantum di dalam acara perjalanan. (MP - Makan Pagi; MS - Makan Siang; MM - Makan Malam).</li>
+          <li>Bagasi cuma-cuma maksimum 1 potong dengan berat maksimum 20 kg dan 1 handbag kecil untuk dibawa ke dalam kabin pesawat, atau sesuai dengan peraturan maskapai penerbangan yang dipakai. </li>
+          <li>Satu buah tas cantik bagi setiap peserta.</li>
+          <li>Tour leader dari Avia Tour.</li>
+        </ul><br><br>
+        <h4>BIAYA TOUR TIDAK TERMASUK :</h4>
+        <ul>
+          <li>Airport tax, fuel surcharge, asuransi penerbangan dan tax lainnya yang berlaku di negara/tempat yang dikunjungi.</li>
+          <li>Biaya pembuatan dokumen perjalanan seperti : paspor, visa, entry permit dll.</li>
+          <li>Pengeluaran pribadi seperti : mini bar, telepon, room service, cucian (laundry), tambahan makanan dan minuman serta pengeluaran lainnya yang bersifat pribadi. </li>
+          <li>Tour tambahan (optional tour) yang mungkin diadakan selama perjalanan.</li>
+          <li>Hotel tambahan / upgrade hotel dari yang sudah diatur dalam perjalanan.</li>
+          <li>Asuransi perjalanan.</li>
+          <li>Excess baggage (biaya kelebihan barang bawaan di atas 20 kg).</li>
+          <li>Biaya bea masuk bagi barang yang dikenakan bea masuk oleh duane di Jakarta maupun di negara-negara yang dikunjungi.</li>
+          <li>Biaya single supplement bagi peserta yang menempati 1 kamar sendiri.</li>
+          <li>Tips untuk porter-porter di hotel dan airport yang dituju (bila ada).</li>
+          <li>Tips untuk lokal guide, pengemudi lokal, pelayan restoran dan tour leader (informasi standard tips akan kami beritahukan dalam Hal Penting untuk peserta sebelum keberangkatan).</li>
+          <li>PPN 1.1%</li>
+        </ul><br>
+        <h6>* Sesuai dengan produk tour yang di pilih. masing-masing produk memiliki list hal yang " termasuk " dan " tidak termasuk ". Silahkan menghubungi kami untuk informasi lebih jelas.</h6><br><br>
+        <h5>PERUBAHAN &amp; PERPANJANGAN / DEVIASI / PENAMBAHAN / PENYIMPANGAN rute perjalanan di luar rute perjalanan yang telah dijadwalkan : </h5>
+        <ul>
+          <li>Diperbolehkan minimal 1 bulan sebelum tanggal keberangkatan atau sebelum ticket dikeluarkan dan biaya yang timbul akan dibebankan kepada peserta. </li>
+          <li>Dapat dilakukan apabila jumlah peserta yang berangkat dan yang pulang telah memenuhi kuota dari ketentuan maskapai penerbangan. </li>
+          <li>Pihak Avia Tour akan mengusahakan tetapi tidak menjamin konfirmasi pesawat, hotel dan sebagainya bila peserta menghendaki perubahan atau perpanjangan (deviasi) dari jadwal paket tour semula. </li>
+          <li>Apabila perubahan &amp; perpanjangan / deviasi / penambahan / penyimpangan rute perjalanan telah disetujui, akan dikenakan biaya sesuai dengan ketentuan maskapai penerbangan dan tidak dapat kembali ke jadwal semula. </li>
+          <li>Apabila permintaan deviasi tidak dapat disetujui oleh pihak maskapai penerbangan, maka peserta akan kembali ke jadwal semula. </li>
+          <li>Tidak ada pengembalian biaya tour untuk peserta yang deviasi dengan mempersingkat acara tour atau untuk peserta yang tidak menggunakan service yang telah dipersiapkan. </li>
+          <li>Ticket pesawat udara yang tidak terpakai tidak dapat diuangkan kembali (non-refundable).</li>
+        </ul><br><br>
+        <h4>PEMBATALAN / PENGUNDURAN DIRI / PINDAH TANGGAL KEBERANGKATAN / PINDAH ACARA TOUR</h4>
+        <h5>Terkecuali diinformasikan berbeda terlebih dahulu, maka biaya pembatalan / pengunduran diri / pindah tanggal keberangkatan / pindah acara tour adalah sebagai berikut :</h5>
+        <ul>
+          <li>setelah pendaftaran : Uang Muka Pendaftaran (non-refundable)</li>
+          <li>Dapat dilakukan apabila jumlah peserta yang berangkat dan yang pulang telah memenuhi kuota dari ketentuan maskapai penerbangan. </li>
+          <li>30 - 15 hari kalender sebelum tanggal keberangkatan : 50% dari biaya tour</li>
+          <li>14 - 06 hari kalender sebelum tanggal keberangkatan : 75% dari biaya tour</li>
+          <li>05 hari kalender sebelum tanggal keberangkatan : 100% dari biaya tour</li>
+        </ul><br>
+        <h5>Biaya pembatalah di atas juga berlaku bagi :</h5>
+        <ul>
+          <li>peserta yang terlambat memberikan kelengkapan persyaratan visa dari batas waktu yang telah ditentukan oleh Avia Tour dan mengakibatkan peserta tidak dapat berangkat tepat pada waktunya karena permohonan visanya masih diproses oleh kedutaan. </li>
+        </ul><br><br>
+        <h4>TANGGUNG JAWAB :</h4>
+        <ul>
+          <li>Avia Tour selalu berusaha untuk memberikan pelayanan terbaik dan bertanggung jawab selama perjalanan, namun sebagai pelaksana, </li>
+        </ul><br><br>
+        <h4>AVIA TOUR DAN SELURUH AGEN TIDAK BERTANGGUNG JAWAB DAN TIDAK BISA DITUNTUT ATAS :</h4>
+        <ul>
+          <li>Kecelakaan, kerusakan, kehilangan dan keterlambatan tibanya bagasi ataupun segala macam ketidak-nyamanan yang disebabkan oleh maskapai penerbangan, hotel dan alat angkutan lainnya. Penggantian didasarkan pada ketentuan maskapai penerbangan atau penyedia jasa pengangkutan yang digunakan.</li>
+          <li>Kegagalan, gangguan dan keterlambatan atau pembatalan dari pesawat udara / kereta api / alat angkutan lainnya yang menyebabkan kerugian waktu, tambahan biaya pergantian hotel, transportasi udara ataupun tidak digunakannya visa kunjungan yang telah dimiliki oleh peserta tour. </li>
+          <li>Kehilangan barang pribadi, koper, titipan barang di airport, hotel dan tindakan kriminal yang menimpa peserta tour selama perjalanan. </li>
+          <li>Perubahan acara perjalanan akibat dari bencana alam (banjir, gempa bumi, petir, angin topan), pernyataan perang, perang, embargo, wabah penyakit, aksi teroris, kerusuhan, mogok buruh, demonstrasi, kebangkrutan maskapai, perubahan peraturan yang berlaku dan lain sebagainya yang bersifat ‘Force Majeure’. (Force Majeure : Suatu kejadian yang terjadi di luar kemampuan manusia dan tidak dapat dihindarkan sehingga suatu kegiatan tidak dapat dilaksanakan sebagaimana mestinya). Ketentuan-ketentuan ini dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu, tergantung dari kebijakan pihak airlines, hotel &amp; agen di luar negeri.</li>
+          <li>Segala pengeluaran tambahan yang disebabkan oleh ‘Force Majeure’.</li>
+          <li>Pengembalian biaya tour, reservasi hotel, transportasi udara dan lain-lain yang tidak terpakai yang disebabkan oleh ‘Force Majeure’. </li>
+          <li>Meninggalnya peserta akibat sakit yang diderita, kecelakaan, dll.</li>
+          <li>Dan sebab-sebab ketidak-nyamanan lainnya di luar kemampuan kami.</li>
+        </ul><br><br>
+        <h4>AVIA TOUR DAN SELURUH AGEN-AGEN BERHAK :</h4>
+        <ul>
+          <li>Membatalkan atau menunda tanggal keberangkatan apabila jumlah peserta kurang dari jumlah minimum peserta sesuai produk tour masing-masing.</li>
+          <li>Menunda tanggal keberangkatan yang dikarenakan oleh masalah ‘overbooked’ maskapai penerbangan.</li>
+          <li>Merubah (memutar) rute &amp; acara perjalanan sesuai dengan kondisi &amp; konfirmasi dari maskapai penerbangan atau berdasarkan kondisi hotel di masing-masing kota / negara. </li>
+          <li>Mengganti hotel-hotel yang akan digunakan berhubung hotel tersebut sudah penuh dan lain-lain. Atau apabila dalam periode tour di kota-kota yang dikunjungi sedang berlangsung pameran / konferensi, atau hotel yang ditawarkan sedang penuh, maka akan diganti dengan hotel-hotel lain yang setaraf di kota terdekat atau sesuai dengan pertimbangan kondisi setempat dan konfirmasi.</li>
+          <li>Meminta peserta tour untuk keluar dari rombongan apabila peserta tour yang bersangkutan mencoba membuat kerusuhan, mengacaukan acara tour, meminta dengan paksa dan memberikan informasi yang tidak benar mengenai acara tour, dll. </li>
+          <li>Membatalkan pendaftaran peserta tour yang belum membayar uang muka atau pelunasan sesuai batas waktu yang telah ditentukan. </li>
+        </ul><br><br>
+        <h4>VISA</h4>
+        <ul>
+          <li>Dalam hal aplikasi visa (apabila rute perjalanan memerlukan visa), peserta bersedia memenuhi kelengkapan persyaratan dokumen sesuai jadwal dan ketentuan dari pihak Kedutaan. </li>
+          <li>Setiap kedutaan/konsulat mempunyai perbedaaan ketentuan dalam hal persyaratan data penunjang serta lamanya pembuatan visa, namun kami dapat membantu Anda dalam proses permohonan pembuatan visa (kecuali untuk negara-negara tertentu Anda harus mengajukannya sendiri), namun Avia Tour tidak menjamin diterimanya/dikabulkan permohonan tersebut. </li>
+          <li>Sesuai dengan ketentuan dari Kedutaan, biaya visa tetap harus dilunasi walaupun visa tidak disetujui oleh pihak Kedutaan. </li>
+          <li>Avia Tour tidak bertanggung jawab atas biaya-biaya tambahan maupun pengembalian uang dari biaya-biaya tour jika ternyata peserta tersebut mengalami deportasi atau penolakan dan wewenang imigrasi dengan alasan apapun, termasuk yang disebabkan oleh dokumen perjalanan yang tidak memenuhi syarat, karantina, peraturan-peraturan keimigrasian, hukum-hukum atau kebutuhan-kebutuhan yang dapat menyebabkan gangguan/perusakan terhadap manusia dan benda-benda. </li>
+          <li>Harga visa dapat berubah sewaktu-waktu tanpa pemberitahuan dan mengikuti kurs yang berlaku atau apabila ada perubahan kebijakan dari Kedutaan. </li>
+        </ul><br><br>
+        <h4>PASSPORT</h4>
+        <ul>
+          <li>Setiap kedutaan/kantor imigrasi/konsulat mempunyai perbedaaan ketentuan dalam hal persyaratan data penunjang serta lamanya pembuatan PASSPORT. Kami tidak bertanggung jawab atas biaya biaya tambahan maupun waktu penyelesaian dokumen PASSPORT.</li>
+          <li>Tidak ada pengembalian uang dari biaya-biaya tour atau bentuk pengembalian lain jika ternyata peserta tersebut mengalami deportasi atau penolakan dan wewenang imigrasi setempat dengan alasan apapun (walaupun telah memiliki visa), termasuk yang disebabkan oleh dokumen perjalanan yang tidak memenuhi syarat, karantina, peraturan-peraturan keimigrasian, hukum-hukum atau kebutuhan-kebutuhan yang dapat menyebabkan gangguan/perusakan terhadap manusia dan benda-benda. </li>
+        </ul><br>
+        <h5>Avia Tour tidak dapat melakukan pengembalian uang atas ditolaknya pembuatan PASSPORT ataupun VISA.</h5><br><br>
+        <h4>PERMINTAAN KHUSUS</h4>
+        <ul>
+          <li>Jika ada permintaan khusus seperti menu makanan (vegetarian, diet dll), kamar yang bersebelahan / saling berhubungan, kamar boleh digunakan untuk merokok, kursi tempat duduk di pesawat, bantuan kursi roda, perubahan nama, perubahan tanggal, perubahan penulisan nama dan lain-lain, harap memberitahukan ke pihak kami pada saat pemesanan tour (reservasi) karena permintaan khusus tersebut membutuhkan waktu untuk konfirmasi / ketersediaannya dari pihak hotel / penerbangan / restoran.</li>
+          <li>Untuk permintaan khusus, ada kalanya membutuhkan penambahan biaya, contohnya permintaan kursi tempat duduk di pesawat  membutuhkan penambahan biaya dari maskapai penerbangan</li>
+        </ul><br><br>
+        <h4>LAIN - LAIN :</h4>
+        <ul>
+          <li>Bagi peserta yang menempati Kamar Triple (1 kamar ditempati 3 orang), kami tidak menjamin tamu akan mendapat 3 tempat tidur yang terpisah, mengingat tempat tidur yang didapat tergantung dari kondisi hotel yang ada (bisa berupa 1 tempat tidur / kasur saja (ondol) / sofa bed / rollaway bed) dan tamu tidak mendapat pengurangan biaya. </li>
+          <li>Kamar yang tersedia di beberapa rute dapat berupa traditional room.</li>
+          <li>Untuk rute tertentu, hotel di beberapa area tidak memiliki fasilitas air conditioner.</li>
+          <li>Dalam beberapa acara perjalanan, peserta tour wajib mengunjungi toko lokal yang telah ditunjuk dan akan dikenakan biaya tambahan apabila tidak mengunjunginya. </li>
+          <li>Beberapa obyek wisata / acara perjalanan yang ditawarkan merupakan  fenomena  alam  yang dapat  diprediksi  tetapi  tidak  dapat  dipastikan,  sehingga ketersediaannya tergantung kondisi cuaca dan alam setempat. Bila tidak tersedia pada saat tour karena kondisi alam, tidak ada pengembalian biaya. </li>
+          <li>Bagi Peserta Tour yang berminat mengikuti Optional Tour pada saat tour berlangsung, maka diwajibkan untuk mengambil program yang sudah disediakan oleh Avia Tour dan partner resminya.</li>
+          <li>Bila permohonan visa ditolak, sedangkan ticket pesawat udara / kereta / kapal atau transportasi lainnya serta ticket objek wisata dan akomodasi sudah diterbitkan atau dibayarkan sebelum permohonan visa disetujui, karena keharusan sehubungan dengan tenggang waktu yang ditentukan perusahaan penerbangan (airlines) atau supplier lainnya, maka biaya visa tidak dapat dikembalikan dan Peserta tetap dikenakan denda pembatalan dan administrasi sesuai dengan kondisi terkait pihak airlines, hotel dan agen di luar negeri. </li>
+          <li>Demi kenyamanan dan kelancaran perencanaan perjalanan tour, Avia Tour berhak untuk menerbitkan dan membayarkan ticket pesawat udara domestik / internasional, kereta, kapal atau transportasi lainnya, serta ticket masuk objek wisata dan akomodasi tanpa melakukan konfirmasi lisan maupun tertulis kepada pendaftar yang telah melakukan deposit. </li>
+          <li>Jadwal tour dapat berubah sewaktu-waktu tanpa mengurangi isi dalam acara tour tersebut dengan  mengikuti kondisi yang memungkinkan.</li>
+          <li>Bagi pendaftar yang berusia di atas 70 tahun atau peserta yang memiliki keterbatasan fungsi anggota tubuh atau indera atau keterbatasan secara mental, wajib didampingi oleh anggota keluarga, teman atau saudara yang akan bertanggung jawab selama perjalanan tour. Juga diharuskan untuk memiliki asuransi perjalanan </li>
+        </ul><br><br>
+        <h1>PACKAGE</h1>
+        <h4>BIAYA PACKAGE TERMASUK :</h4>
+        <ul>
+          <li>Sesuai dengan produk yang di pilih. masing-masing produk memiliki list hal yang "termasuk" dan "tidak termasuk" silahkan menghubungi kami untuk info lebih jelas.</li>
+        </ul><br><br>
+        <h4>BIAYA PACKAGE TIDAK TERMASUK :</h4>
+        <ul>
+          <li>Harga belum termasuk Tax dan Fuel Surcharge (masih dapat berubah setiap saat tergantung dari pihak ke 3)</li>
+          <li>Harga belum termasuk Airport Tax Jakarta, Tax Internasional (jika ada), biaya visa (jika ada) dan asuransi perjalanan pribadi dapat berubah sewaktu-waktu, dan akan disesuaikan kepada peserta sebelum keberangkatan. </li>
+          <li>Biaya pengeluaran pribadi seperti laundry, minibar dll</li>
+          <li>Biaya tour tambahan</li>
+          <li>Tiket pesawat (tergantung package yang dipilih)</li>
+          <li>Sesuai dengan produk yang di pilih. masing-masing produk memiliki list hal yang "termasuk" dan "tidak termasuk" silahkan menghubungi kami untuk info lebih jelas. </li>
+        </ul><br><br>
+        <h4>PERMINTAAN KHUSUS :</h4>
+        <ul>
+          <li>Jika ada permintaan khusus seperti menu makanan (vegetarian,diet dan lain-lain), kamar yang bersebelahan/saling berhubungan, kursi tempat duduk di pesawat dan lain-lain, harap memberitahukan ke pihak kami pada saat pemesanan tur (reservasi) karena permintaan khusus tersebut membutuhkan waktu untuk konfirmasi/ketersediaannya dan tidak terjamin dari pihak hotel/penerbangan/restoran. </li>
+        </ul><br><br>
+        <h4>ATTRACTION:</h4>
+        <ul>
+          <li>Produk yang di jual oleh aviatour adalah atas kerjasama dengan pihak ke tiga (agen / supplier ) yang menyediakan atraksi tersebut. </li>
+          <li>Konfirmasi bookingan hanya dapat di berikan oleh Aviatour setelah menerima pembayaran oleh anda / pelanggan. ketersediaan kursi / availability adalah sepenuhnya hak pihak ke tiga. </li>
+          <li>Produk yang sudah di book tidak dapat di batalkan terkecuali dapat informasi dari pihak Supplier Attraction tersebut. </li>
+        </ul><br><br>
+        <h4>LAIN - LAIN :</h4>
+        <ul>
+          <li>Minimum jumlah peserta adalah 2 pax (orang). </li>
+          <li>Menyertakan Foto Copy Passport/KTP.</li>
+          <li>Uang Muka Pendaftaran tidak dapat dikembalikan (down payment non-refundable) dan jumlah minimum Rp.1.000.000,00/ peserta. </li>
+          <li>Waktu Booking/ Pembukuan minimal 3-7 hari kerja sebelum jadwal keberangkatan.</li>
+          <li>Dalam hal aplikasi visa (jika ada), Peserta bersedia memenuhi kelengkapan persyaratan dokumen sesuai jadwal dan ketentuan dari pihak Kedutaan, dan biaya visa tetap harus dilunasi walaupun visa tidak disetujui oleh pihak Kedutaan. </li>
+          <li>Pelunasan dilakukan setelah booking/ pembukuan Confirm.</li>
+          <li>Peserta akan dikenai Biaya Cancellation Fee sebesar 100% jika melakukan last minute cancel (1 hari sebelum keberangkatan atau pada hari keberangkatan). </li>
+          <li>Acara perjalanan dapat berubah / diputar berdasarkan kondisi tiap-tiap penerbangan dan hotel di masing-masing kota / negara. </li>
+          <li>Apabila dalam periode package di kota-kota yang dikunjungi sedang berlangsung pameran / konferensi, atau hotel yang ditawarkan sedang penuh, maka akan diganti dengan hotel-hotel lain yang setaraf di kota terdekat. </li>
+          <li>Apabila terjadi Force Majeur (kondisi di luar kendali seperti : kehilangan, kerusakan, gangguan, keterlambatan sarana angkutan/transportasi, bencana alam dll) yang dapat mempengaruhi acara, maka acara akan dirubah dan bersifat non-refundable (tidak dapat dikembalikan).</li>
+          <li>Dan biaya package tidak termasuk segala pengeluaran tambahan yang disebabkan oleh Force Majeur.</li>
+          <li>Deviasi akan dikenakan biaya sesuai dengan kondisi Airlines yang bersangkutan.</li>
+          <li>Harga masih dapat berubah sewaktu-waktu dari pihak hotel atau tanpa pemberitahuan sebelumnya.</li>
+          <li>Dengan membayar uang muka pendaftaran biaya package, Anda dianggap telah memahami dan menerima syarat &amp; kondisi di atas. Syarat &amp; Kondisi Package selengkapnya berlaku sesuai dengan yang tertera di dalam brosur program Package Avia / website </li>
+        </ul><br>
+        <h6>NO BOOKING WILL BE MADE UNTIL CONFIRMATION FROM OUR STAFF, PLEASE EMAIL AVIAWEB@AVIA-TOUR.COM FOR MORE INFO.</h6><br><br>
+        <h4>CATATAN:</h4>
+        <p>AVIA TOUR dan agen-agennya dapat sewaktu-waktu merubah/menyesuaikan acara tour dan hotel sesuai dengan keadaan setempat, baik susunan maupun urutannya.</p>
+        <p>Harga yang tercantum di website dapat berubah sewaktu-waktu dan tidak mengikat. Untuk syarat pengajuan Visa ke Kedutaan , Travel Insurance yang digunakan adalah tipe Premier.</p>
+        <p>Untuk informasi lebih lanjut bisa menghubungi staff Avia Tour dengan mengisi contact form atau menghubungi telepon 021 4223838 / 021 422 3888.</p>
+        <p>Terima kasih atas perhatian Anda. </p>
+      </div>
+    </div>
+  </section>
+
+  <!--  CONTENT AREA END -->
+  
+  <div class="bg-gray-700 py-12">
+    <div class="max-w-md mx-auto text-center">
+      <h2 class="text-2xl font-semibold text-white mb-4">Berlangganan Newsletter Kami</h2>
+      <p class="text-white mb-6 text-base">Dapatkan update terbaru, penawaran eksklusif, dan tips bermanfaat langsung ke inbox Anda.</p>
+      <div class="flex rounded-md shadow-sm">
+        <input type="email" class="flex-1 text-white min-w-0 block w-full px-3 py-2 rounded-none rounded-l-md border border-white placeholder-white focus:ring-white focus:border-white focus:outline-none sm:text-sm" placeholder="Masukkan alamat email Anda">
+        <button type="submit" class="bg-[#326dcf] hover:bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-r-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#326dcf]">Berlangganan</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-[#326dcf] text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h2 class="text-xl font-bold mb-4">Tentang Kami</h2>
+        <p class="text-sm lg:text-base leading-relaxed">
+          <span class="font-bold">Al-Hasan</span> adalah Biro Travel Haji dan Umroh yang terdaftar dan berizin resmi di Kementrian agama. Terdaftar atas nama PT Al-Hasan, dengan nomor ijin<br /><br />
+          • Ijin PPIU : U.277 / 2021<br />
+          • Ijin PIHK : 91201048416390001/2021
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Artikel</h2>
+        <ul class="text-sm lg:text-base space-y-2">
+          <li><a href="#" class="hover:underline">Keutamaan dan Adab Beribadah di Raudhah</a></li>
+          <li><a href="#" class="hover:underline">10 Waktu-Waktu Doa Mustajab</a></li>
+          <li><a href="#" class="hover:underline">Bilal Bin Rabah Simbol Kesetaraan Sosial Islam</a></li>
+          <li><a href="#" class="hover:underline">Rangkaian Ibadah Haji dan Umroh</a></li>
+          <li><a href="#" class="hover:underline">Rukun dan Wajib Haji</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Menu Tambahan</h2>
+        <ul class="text-sm lg:text-base space-y-2">
+          <li><a href="#" class="hover:underline">Kemitraan Umroh</a></li>
+          <li><a href="#" class="hover:underline">Kontak</a></li>
+          <li><a href="#" class="hover:underline">Paket Umrah Jakarta</a></li>
+          <li><a href="#" class="hover:underline">Paket Umrah Jogja</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Kontak Kami</h2>
+        <ul class="text-sm lg:text-base space-y-2">
+          <li class="flex items-start gap-2"><span><i class="fa fa-phone"></i></span> 0274-373953</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-phone"></i></span> 0899-000-1234</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-envelope"></i></span> alhasan@gmail.com</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-check"></i></span>Bojong genteng, Kabupaten Sukabumi</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-check"></i></span>Ruko Pasar Modern Timur Blok A11<br />BSD Jl. Bidara, Sukabumi Kabupaten, Jawa Barat 15310</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between border-white/10 mt-12 pt-6 px-4 text-center text-sm lg:text-base">
+        <p>PT Al-Hasan 2025 | All rights reserved.</p>
+        <div class="mt-4 flex justify-center gap-6 text-lg">
+          <a href="#" class="hover:text-pink-400">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="hover:text-pink-400">
+            <i class="fab fa-x"></i>
+          </a>
+          <a href="#" class="hover:text-pink-400">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

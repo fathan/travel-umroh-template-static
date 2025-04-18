@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.14.8/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="assets/style.css">
+
+  <title>Travel Umroh</title>
+</head>
+<body>
+  <header class="border-b border-gray-200 text-sm text-gray-600">
+    <div class="flex items-center justify-between px-6 py-2 bg-white max-w-7xl mx-auto">
+      <div class="flex items-center gap-4">
+        <span class="flex items-center gap-1">
+          <span class="w-2 h-2 bg-red-600 rounded-full"></span>
+          <span class="text-sm lg:text-base">Indonesia</span>
+        </span>
+        <span class="text-sm lg:text-base"><strong>Phone:</strong> 08112024000</span>
+        <span class="text-sm lg:text-base"><strong>Email:</strong> info@alhasan.com</span>
+      </div>
+
+      <div class="flex flex-row items-center gap-4">
+        <a href="#" class="flex items-center gap-1">
+          <span class="text-sm lg:text-base">Login</span>
+        </a>
+        |
+        <a href="#" class="flex items-center gap-1">
+          <span class="text-sm lg:text-base">Register</span>
+        </a>
+        |
+        <a href="#" class="flex items-center gap-1">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c3.042 0 5.824 1.016 7.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+          <span class="text-sm lg:text-base">Akun</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row items-center justify-between px-6 py-4 bg-white gap-4 max-w-7xl mx-auto">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="https://www.arminarekaperdana.com/images/logo-arp-black.png" alt="Logo Arminareka" class="h-18" />
+      </a>
+      <nav class="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600 text-sm lg:text-base font-medium">
+        <a href="index.html" class="hover:text-blue-600">Beranda</a>
+        
+        <div class="relative group">
+          <button class="hover:text-blue-600 flex items-center gap-1">
+            Profil
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
+            @mouseenter="show = true"
+            @mouseleave="show = false"
+          >
+            <a href="about-us.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tentang Kami</a>
+            <a href="license.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Perizinan</a>
+            <a href="term-and-condition.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Term & Condition</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button class="hover:text-blue-600 flex items-center gap-1">
+            Layanan
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
+            @mouseenter="show = true"
+            @mouseleave="show = false"
+          >
+            <a href="package.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Paket Umrah</a>
+            <a href="package.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Paket Haji</a>
+          </div>
+        </div>
+        
+        <div class="relative group">
+          <button class="hover:text-blue-600 flex items-center gap-1">
+            Informasi
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div
+            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
+            @mouseenter="show = true"
+            @mouseleave="show = false"
+          >
+            <a href="article.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Artikel</a>
+            <a href="gallery.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galeri</a>
+            <a href="testimonial.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Testimonial</a>
+            <a href="affiliate.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Affiliate</a>
+          </div>
+        </div>
+
+        <a href="contact-us.html" class="hover:text-blue-600">Kontak Kami</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative bg-cover bg-center text-white" style="background-image: url('https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/6515/bg-muna.jpeg');">
+    <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-xs"></div>
+  
+    <div class="relative z-10 max-w-7xl mx-auto px-4 py-12 flex flex-col lg:flex-row items-center">
+      <div class="border rounded-lg w-full">
+        <img src="https://baitullah.co.id/images/banner/174banner_web2.jpg" alt="Logo Arminareka" />
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold text-gray-900 relative inline-block mb-12">
+        Kenapa Umroh Bersama Al-Hasan Umroh Travel?
+      </h2>
+  
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Terpercaya" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Terpercaya</h3>
+          <p class="text-sm lg:text-base text-gray-600">Berizin resmi PPIU & PIHK dari Kemenag RI</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Terbaik" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Terbaik</h3>
+          <p class="text-sm lg:text-base text-gray-600">Pembimbing ibadah terbaik dan berpengalaman</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Berkualitas" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Berkualitas</h3>
+          <p class="text-sm lg:text-base text-gray-600">Hotel standar internasional bintang 4 dan 5</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Resmi" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Resmi</h3>
+          <p class="text-sm lg:text-base text-gray-600">Penyedia pelayanan umroh resmi di Indonesia</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="On Time" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">On Time</h3>
+          <p class="text-sm lg:text-base text-gray-600">Maskapai penerbangan bintang 5</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Nyaman" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Nyaman</h3>
+          <p class="text-sm lg:text-base text-gray-600">Armada terbaru yang nyaman dan eksklusif</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Profesional" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Profesional</h3>
+          <p class="text-sm lg:text-base text-gray-600">Melayani dengan berpengalaman & profesional</p>
+        </div>
+  
+        <div class="bg-white rounded-lg shadow p-6">
+          <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Eksklusif" class="mx-auto h-12 mb-4" />
+          <h3 class="text-lg font-semibold text-gray-900">Eksklusif</h3>
+          <p class="text-sm lg:text-base text-gray-600">Perlengkapan travel eksklusif Al-Hasan Umroh Travel</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-32 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-center mb-18">
+        <h2 class="text-3xl font-bold">
+          Paket Kami
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="relative">
+            <img src="https://baitullah.co.id/images/default/background_paket.jpg" alt="Umrah Reguler" class="w-full h-auto aspect-video object-cover">
+            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-semibold py-1 px-2 rounded-md">UMRAH REGULER</div>
+            <div class="absolute top-4 right-4 bg-white text-gray-700 text-sm font-semibold py-1 px-2 rounded-md">#</div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 text-white">
+              <div class="flex items-center space-x-2 text-xs">
+                <i class="fa fa-info-circle"></i>
+                <span>CITRINE 9 HARI</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">UMRAH REGULER 12 HARI</h3>
+            <p class="bg-[#FFC107] inline-block text-white rounded-lg py-1 px-2 text-base font-bold mb-6">Rp. 31.500.000</p>
+
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-calendar"></i>
+                <span>Jadwal Keberangkatan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                13 Dec 25
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-refresh"></i>
+                <span>Durasi Perjalanan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                9 Hari
+              </div>
+            </div>
+            <!-- <hr class="my-2 border-gray-200"> -->
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-hotel"></i>
+                <span>Kelas Hotel</span>
+              </div>
+              <div class="ml-auto text-orange-500 font-semibold py-1 px-2 rounded-full">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Berangkat Dari</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                Jakarta
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Maskapai</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                <img src="./assets/logo-saudia-airlines.png" alt="Saudia Airlines" class="h-8">
+              </div>
+            </div>
+          </div>
+          <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
+            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              Lihat detail
+            </button>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="relative">
+            <img src="https://baitullah.co.id/images/default/background_paket.jpg" alt="Umrah Reguler" class="w-full h-auto aspect-video object-cover">
+            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-semibold py-1 px-2 rounded-md">UMRAH REGULER</div>
+            <div class="absolute top-4 right-4 bg-white text-gray-700 text-sm font-semibold py-1 px-2 rounded-md">#</div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 text-white">
+              <div class="flex items-center space-x-2 text-xs">
+                <i class="fa fa-info-circle"></i>
+                <span>CITRINE 9 HARI</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">UMRAH REGULER 12 HARI</h3>
+            <p class="bg-[#FFC107] inline-block text-white rounded-lg py-1 px-2 text-base font-bold mb-6">Rp. 31.500.000</p>
+
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-calendar"></i>
+                <span>Jadwal Keberangkatan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                13 Dec 25
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-refresh"></i>
+                <span>Durasi Perjalanan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                9 Hari
+              </div>
+            </div>
+            <!-- <hr class="my-2 border-gray-200"> -->
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-hotel"></i>
+                <span>Kelas Hotel</span>
+              </div>
+              <div class="ml-auto text-orange-500 font-semibold py-1 px-2 rounded-full">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Berangkat Dari</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                Jakarta
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Maskapai</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                <img src="./assets/logo-saudia-airlines.png" alt="Saudia Airlines" class="h-8">
+              </div>
+            </div>
+          </div>
+          <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
+            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              Lihat detail
+            </button>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="relative">
+            <img src="https://baitullah.co.id/images/default/background_paket.jpg" alt="Umrah Reguler" class="w-full h-auto aspect-video object-cover">
+            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-semibold py-1 px-2 rounded-md">UMRAH REGULER</div>
+            <div class="absolute top-4 right-4 bg-white text-gray-700 text-sm font-semibold py-1 px-2 rounded-md">#</div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 text-white">
+              <div class="flex items-center space-x-2 text-xs">
+                <i class="fa fa-info-circle"></i>
+                <span>CITRINE 9 HARI</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">UMRAH REGULER 12 HARI</h3>
+            <p class="bg-[#FFC107] inline-block text-white rounded-lg py-1 px-2 text-base font-bold mb-6">Rp. 31.500.000</p>
+
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-calendar"></i>
+                <span>Jadwal Keberangkatan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                13 Dec 25
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-refresh"></i>
+                <span>Durasi Perjalanan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                9 Hari
+              </div>
+            </div>
+            <!-- <hr class="my-2 border-gray-200"> -->
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-hotel"></i>
+                <span>Kelas Hotel</span>
+              </div>
+              <div class="ml-auto text-orange-500 font-semibold py-1 px-2 rounded-full">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Berangkat Dari</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                Jakarta
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Maskapai</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                <img src="./assets/logo-saudia-airlines.png" alt="Saudia Airlines" class="h-8">
+              </div>
+            </div>
+          </div>
+          <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
+            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              Lihat detail
+            </button>
+          </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+          <div class="relative">
+            <img src="https://baitullah.co.id/images/default/background_paket.jpg" alt="Umrah Reguler" class="w-full h-auto aspect-video object-cover">
+            <div class="absolute top-4 left-4 bg-primary text-white text-sm font-semibold py-1 px-2 rounded-md">UMRAH REGULER</div>
+            <div class="absolute top-4 right-4 bg-white text-gray-700 text-sm font-semibold py-1 px-2 rounded-md">#</div>
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4 text-white">
+              <div class="flex items-center space-x-2 text-xs">
+                <i class="fa fa-info-circle"></i>
+                <span>CITRINE 9 HARI</span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-2">UMRAH REGULER 12 HARI</h3>
+            <p class="bg-[#FFC107] inline-block text-white rounded-lg py-1 px-2 text-base font-bold mb-6">Rp. 31.500.000</p>
+
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-calendar"></i>
+                <span>Jadwal Keberangkatan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                13 Dec 25
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-refresh"></i>
+                <span>Durasi Perjalanan</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                9 Hari
+              </div>
+            </div>
+            <!-- <hr class="my-2 border-gray-200"> -->
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-hotel"></i>
+                <span>Kelas Hotel</span>
+              </div>
+              <div class="ml-auto text-orange-500 font-semibold py-1 px-2 rounded-full">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Berangkat Dari</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                Jakarta
+              </div>
+            </div>
+            <div class="flex items-center text-gray-700 text-sm lg:text-base mb-4">
+              <div class="flex items-center gap-2">
+                <i class="fa fa-info-circle"></i>
+                <span>Maskapai</span>
+              </div>
+              <div class="ml-auto text-gray-700 font-semibold py-1 px-2 rounded-full">
+                <img src="./assets/logo-saudia-airlines.png" alt="Saudia Airlines" class="h-8">
+              </div>
+            </div>
+          </div>
+          <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
+            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+              Lihat detail
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <a href="package.html" class="flex justify-center mt-12">
+        <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer">
+          Lihat Semua Paket
+        </button>
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-white text-gray-800 px-6 py-32">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl font-bold">Ijin Resmi</h2>
+        <h3 class="text-[#326dcf] text-2xl font-bold mt-1">Al-Hasan Tour & Travel</h3>
+        <p class="text-gray-600 mt-4 leading-relaxed">
+          Untuk menjamin kenyamanan dan keamanan calon jamaah haji & umroh, maka sejak tahun 2020 kami telah
+          mengantongi ijin resmi dari Kemenag sebagai biro travel umroh terpercaya
+        </p>
+      </div>
+      <div class="space-y-6">
+        <div class="flex items-start gap-4">
+          <span class="text-gray-400 text-lg font-semibold">01</span>
+          <div>
+            <p class="font-semibold text-xl">Penyelenggara Perjalanan Ibadah Umroh (PPIU) :</p>
+            <p class="text-gray-800 text-lg">NOMOR U.556 TAHUN 2020</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4">
+          <span class="text-gray-400 text-lg font-semibold">02</span>
+          <div>
+            <p class="font-semibold text-xl">Penyelenggara Ibadah Haji Khusus (PIHK) :</p>
+            <p class="text-gray-800 text-lg">NOMOR 716 TAHUN 2021</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 mb-10 text-sm text-gray-400 uppercase tracking-widest text-center">
+      Dan Inilah
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold">8 Prinsip</h2>
+        <h3 class="text-[#326dcf] text-2xl font-bold mt-1">Al-Hasan Tour & Travel</h3>
+      </div>
+
+      <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-center relative">
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            1
+          </div>
+          <h4 class="font-semibold mb-2">Budaya Perusahaan</h4>
+          <p class="text-sm text-gray-600">
+            Kami menjadikan <span class="font-semibold">KEJUJURAN, AMANAH</span> dan <span class="font-semibold">PROFESIONALISME</span> sebagai budaya perusahaan
+          </p>
+        </div>
+  
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            2
+          </div>
+          <h4 class="font-semibold mb-2">Orientasi</h4>
+          <p class="text-sm text-gray-600">
+            Kami berorientasi kepada <span class="font-semibold">Keridhoan Allah SWT</span> dan <span class="font-semibold">KEPUASAN PELANGGAN</span> (customer satisfaction)
+          </p>
+        </div>
+  
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            3
+          </div>
+          <h4 class="font-semibold mb-2">Operasional</h4>
+          <p class="text-sm text-gray-600">
+            Kami mengikuti perkembangan <span class="font-semibold">TEKNOLOGI & INFORMASI (IT)</span> dalam operasionalisasinya
+          </p>
+        </div>
+  
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            4
+          </div>
+          <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
+          <p class="text-sm text-gray-600">
+            Kami menjadikan <span class="font-semibold">KEBERKAHAN RIZKI</span> sebagai tujuan asasi perusahaan
+          </p>
+        </div>
+
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            5
+          </div>
+          <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
+          <p class="text-sm text-gray-600">
+            Kami menjadikan <span class="font-semibold">KEBERKAHAN RIZKI</span> sebagai tujuan asasi perusahaan
+          </p>
+        </div>
+
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            6
+          </div>
+          <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
+          <p class="text-sm text-gray-600">
+            Kami menjadikan <span class="font-semibold">KEBERKAHAN RIZKI</span> sebagai tujuan asasi perusahaan
+          </p>
+        </div>
+
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            7
+          </div>
+          <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
+          <p class="text-sm text-gray-600">
+            Kami menjadikan <span class="font-semibold">KEBERKAHAN RIZKI</span> sebagai tujuan asasi perusahaan
+          </p>
+        </div>
+
+        <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+            8
+          </div>
+          <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
+          <p class="text-sm text-gray-600">
+            Kami menjadikan <span class="font-semibold">KEBERKAHAN RIZKI</span> sebagai tujuan asasi perusahaan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>  
+  
+  <section class="bg-gray-50 py-32">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-24">
+        <h2 class="text-2xl font-semibold inline-block py-2">
+          Tanya Jawab Seputar Umroh & Haji
+        </h2>
+        <p class="text-gray-500 mt-2 text-sm">Beberapa Pertanyaan yang sering diajukan terkait layanan Al-Hasan Umrah.</p>
+      </div>
+  
+      <div class="space-y-4">
+        <div class="border border-gray-200 rounded-md overflow-hidden">
+          <button class="w-full flex justify-between items-center bg-blue-50 px-6 py-4 text-[#326dcf] font-semibold">
+            Bagaimana tata cara pelaksanaan umrah?
+            <span class="text-xl font-bold">−</span>
+          </button>
+          <div class="px-6 py-4 text-sm lg:text-base text-gray-700 bg-white border-t border-pink-100">
+            <p class="mb-2">Tata cara pelaksanaan umrah meliputi beberapa tahap:</p>
+            <ol class="list-decimal list-inside space-y-1">
+              <li>Ihram: Memakai pakaian ihram dari Miqat dan berniat umrah.</li>
+              <li>Tawaf: Melakukan tawaf mengelilingi Ka'bah sebanyak 7 putaran, dimulai dan diakhiri di Hajar Aswad.</li>
+              <li>Sa’i: Berlari-lari kecil antara Safa dan Marwah sebanyak 7 kali, dimulai dari Safa dan diakhiri di Marwah.</li>
+              <li>Tahallul: Memotong sedikit rambut atau mencukur habis sebagai tanda berakhirnya umrah.</li>
+            </ol>
+          </div>
+        </div>
+  
+        <div class="border border-gray-200 rounded-md overflow-hidden">
+          <button class="w-full flex justify-between items-center px-6 py-4 bg-white text-gray-700 cursor-pointer font-medium hover:bg-blue-50">
+            Mengapa saya harus memilih Al-Hasan Umrah Travel untuk perjalanan umrah saya?
+            <span class="text-xl font-bold">＋</span>
+          </button>
+        </div>
+  
+        <div class="border border-gray-200 rounded-md overflow-hidden">
+          <button class="w-full flex justify-between items-center px-6 py-4 bg-white text-gray-700 cursor-pointer font-medium hover:bg-blue-50">
+            Bagaimana cara mendaftar paket umrah di Al-Hasan Umrah Travel?
+            <span class="text-xl font-bold">＋</span>
+          </button>
+        </div>
+  
+        <div class="border border-gray-200 rounded-md overflow-hidden">
+          <button class="w-full flex justify-between items-center px-6 py-4 bg-white text-gray-700 cursor-pointer font-medium hover:bg-blue-50">
+            Apa saja dokumen yang diperlukan untuk mendaftar paket umrah?
+            <span class="text-xl font-bold">＋</span>
+          </button>
+        </div>
+  
+        <div class="border border-gray-200 rounded-md overflow-hidden">
+          <button class="w-full flex justify-between items-center px-6 py-4 bg-white text-gray-700 cursor-pointer font-medium hover:bg-blue-50">
+            Apa saja barang-barang yang harus saya siapkan sebelum berangkat umrah?
+            <span class="text-xl font-bold">＋</span>
+          </button>
+        </div>
+  
+        <div class="border border-gray-200 rounded-md overflow-hidden">
+          <button class="w-full flex justify-between items-center px-6 py-4 bg-white text-gray-700 cursor-pointer font-medium hover:bg-blue-50">
+            Apa saja paket umrah yang ditawarkan oleh Al-Hasan Umrah Travel?
+            <span class="text-xl font-bold">＋</span>
+          </button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-gray-700 py-12">
+    <div class="max-w-md mx-auto text-center">
+      <h2 class="text-2xl font-semibold text-white mb-4">Berlangganan Newsletter Kami</h2>
+      <p class="text-white mb-6 text-base">Dapatkan update terbaru, penawaran eksklusif, dan tips bermanfaat langsung ke inbox Anda.</p>
+      <div class="flex rounded-md shadow-sm">
+        <input type="email" class="flex-1 text-white min-w-0 block w-full px-3 py-2 rounded-none rounded-l-md border border-white placeholder-white focus:ring-white focus:border-white focus:outline-none sm:text-sm" placeholder="Masukkan alamat email Anda">
+        <button type="submit" class="bg-[#326dcf] hover:bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-r-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#326dcf]">Berlangganan</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-[#326dcf] text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h2 class="text-xl font-bold mb-4">Tentang Kami</h2>
+        <p class="text-sm lg:text-base leading-relaxed">
+          <span class="font-bold">Al-Hasan</span> adalah Biro Travel Haji dan Umroh yang terdaftar dan berizin resmi di Kementrian agama. Terdaftar atas nama PT Al-Hasan, dengan nomor ijin<br /><br />
+          • Ijin PPIU : U.277 / 2021<br />
+          • Ijin PIHK : 91201048416390001/2021
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Artikel</h2>
+        <ul class="text-sm lg:text-base space-y-2">
+          <li><a href="#" class="hover:underline">Keutamaan dan Adab Beribadah di Raudhah</a></li>
+          <li><a href="#" class="hover:underline">10 Waktu-Waktu Doa Mustajab</a></li>
+          <li><a href="#" class="hover:underline">Bilal Bin Rabah Simbol Kesetaraan Sosial Islam</a></li>
+          <li><a href="#" class="hover:underline">Rangkaian Ibadah Haji dan Umroh</a></li>
+          <li><a href="#" class="hover:underline">Rukun dan Wajib Haji</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Menu Tambahan</h2>
+        <ul class="text-sm lg:text-base space-y-2">
+          <li><a href="#" class="hover:underline">Kemitraan Umroh</a></li>
+          <li><a href="#" class="hover:underline">Kontak</a></li>
+          <li><a href="#" class="hover:underline">Paket Umrah Jakarta</a></li>
+          <li><a href="#" class="hover:underline">Paket Umrah Jogja</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">Kontak Kami</h2>
+        <ul class="text-sm lg:text-base space-y-2">
+          <li class="flex items-start gap-2"><span><i class="fa fa-phone"></i></span> 0274-373953</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-phone"></i></span> 0899-000-1234</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-envelope"></i></span> alhasan@gmail.com</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-check"></i></span>Bojong genteng, Kabupaten Sukabumi</li>
+          <li class="flex items-start gap-2"><span><i class="fa fa-check"></i></span>Ruko Pasar Modern Timur Blok A11<br />BSD Jl. Bidara, Sukabumi Kabupaten, Jawa Barat 15310</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto">
+      <div class="flex justify-between border-white/10 mt-12 pt-6 px-4 text-center text-sm lg:text-base">
+        <p>PT Al-Hasan 2025 | All rights reserved.</p>
+        <div class="mt-4 flex justify-center gap-6 text-lg">
+          <a href="#" class="hover:text-pink-400">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="#" class="hover:text-pink-400">
+            <i class="fab fa-x"></i>
+          </a>
+          <a href="#" class="hover:text-pink-400">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
