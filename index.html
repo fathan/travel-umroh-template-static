@@ -11,113 +11,97 @@
 
   <link rel="stylesheet" href="assets/style.css">
 
+  <script src="assets/app.js" defer></script>
+
   <title>Travel Umroh</title>
 </head>
 <body>
-  <header class="border-b border-gray-200 text-sm text-gray-600">
-    <div class="flex items-center justify-between px-6 py-2 bg-white max-w-7xl mx-auto">
-      <div class="flex items-center gap-4">
-        <span class="flex items-center gap-1">
-          <span class="w-2 h-2 bg-red-600 rounded-full"></span>
-          <span class="text-sm lg:text-base">Indonesia</span>
-        </span>
-        <span class="text-sm lg:text-base"><strong>Phone:</strong> 08112024000</span>
-        <span class="text-sm lg:text-base"><strong>Email:</strong> info@alhasan.com</span>
-      </div>
+  <div class="relative">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+        <div class="flex items-center space-x-2">
+          <img src="./assets/logo-2.png" alt="Logo" class="h-8">
+        </div>
 
-      <div class="flex flex-row items-center gap-4">
-        <a href="#" class="flex items-center gap-1">
-          <span class="text-sm lg:text-base">Login</span>
-        </a>
-        |
-        <a href="#" class="flex items-center gap-1">
-          <span class="text-sm lg:text-base">Register</span>
-        </a>
-        |
-        <a href="#" class="flex items-center gap-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 15c3.042 0 5.824 1.016 7.879 2.804M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <span class="text-sm lg:text-base">Akun</span>
-        </a>
-      </div>
-    </div>
-    
-    <div class="flex flex-col lg:flex-row items-center justify-between px-6 py-4 bg-white gap-4 max-w-7xl mx-auto">
-      <a href="index.html" class="flex items-center gap-2">
-        <img src="https://www.arminarekaperdana.com/images/logo-arp-black.png" alt="Logo Arminareka" class="h-18" />
-      </a>
-      <nav class="flex flex-wrap justify-center lg:justify-start gap-6 text-gray-600 text-sm lg:text-base font-medium">
-        <a href="index.html" class="hover:text-blue-600">Beranda</a>
+        <div class="md:flex items-center space-x-6">
+          <a href="index.html" class="menu-nav text-white hover:text-blue-600">Beranda</a>
         
-        <div class="relative group">
-          <button class="hover:text-blue-600 flex items-center gap-1">
-            Profil
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
-            @mouseenter="show = true"
-            @mouseleave="show = false"
-          >
-            <a href="about-us.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Tentang Kami</a>
-            <a href="license.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Perizinan</a>
-            <a href="term-and-condition.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Term & Condition</a>
+          <div class="relative group">
+            <div class="menu-nav-submenu text-white hover:text-blue-600 flex items-center gap-1">
+              Profil
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div
+              class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2 children"
+              @mouseenter="show = true"
+              @mouseleave="show = false"
+            >
+              <a href="about-us.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Tentang Kami</a>
+              <a href="license.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Perizinan</a>
+              <a href="term-and-condition.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Term & Condition</a>
+            </div>
           </div>
-        </div>
 
-        <div class="relative group">
-          <button class="hover:text-blue-600 flex items-center gap-1">
-            Layanan
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
-            @mouseenter="show = true"
-            @mouseleave="show = false"
-          >
-            <a href="package.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Paket Umrah</a>
-            <a href="package.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Paket Haji</a>
+          <div class="relative group">
+            <div class="menu-nav-submenu text-white hover:text-blue-600 flex items-center gap-1">
+              Layanan
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div
+              class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2 children"
+              @mouseenter="show = true"
+              @mouseleave="show = false"
+            >
+              <a href="package.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Paket Umrah</a>
+              <a href="package.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Paket Haji</a>
+            </div>
           </div>
-        </div>
-        
-        <div class="relative group">
-          <button class="hover:text-blue-600 flex items-center gap-1">
-            Informasi
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2"
-            @mouseenter="show = true"
-            @mouseleave="show = false"
-          >
-            <a href="article.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Artikel</a>
-            <a href="gallery.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Galeri</a>
-            <a href="testimonial.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Testimonial</a>
-            <a href="affiliate.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Affiliate</a>
+          
+          <div class="relative group">
+            <div class="menu-nav-submenu text-white hover:text-blue-600 flex items-center gap-1">
+              Informasi
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+            <div
+              class="absolute z-50 hidden group-hover:flex flex-col bg-white shadow-md rounded-md w-48 py-2 children"
+              @mouseenter="show = true"
+              @mouseleave="show = false"
+            >
+              <a href="article.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Artikel</a>
+              <a href="gallery.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Galeri</a>
+              <a href="testimonial.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Testimonial</a>
+              <a href="affiliate.html" class="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100">Affiliate</a>
+            </div>
           </div>
+
+          <a href="#" class="menu-nav text-white hover:text-blue-600">Kontak Kami</a>
         </div>
-
-        <a href="contact-us.html" class="hover:text-blue-600">Kontak Kami</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="relative bg-cover bg-center text-white" style="background-image: url('https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/6515/bg-muna.jpeg');">
-    <div class="absolute inset-0 bg-blue-900/70 backdrop-blur-xs"></div>
-  
-    <div class="relative z-10 max-w-7xl mx-auto px-4 py-12 flex flex-col lg:flex-row items-center">
-      <div class="border rounded-lg w-full">
-        <img src="https://baitullah.co.id/images/banner/174banner_web2.jpg" alt="Logo Arminareka" />
       </div>
-    </div>
-  </section>
+    </nav>
+
+    <section class="relative h-screen w-full overflow-hidden">
+      <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop playsinline>
+        <source src="./assets/video.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video.
+      </video>
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <h1 class="text-3xl md:text-5xl font-bold text-white mb-6">Travel Haji, Umroh dan Halal Tours</h1>
+        <p class="text-lg text-white max-w-2xl mb-8">
+          "Ikutkanlah umroh kepada haji, karena keduanya menghilangkan kemiskinan dan dosa-dosa sebagaimana pembakaran menghilangkan karat pada besi, emas, dan perak. Sementara tidak ada pahala bagi haji yang mabrur kecuali surga." (HR. An Nasai, Tirmidzi dan Ahmad)
+        </p>
+        <div class="flex flex-col space-x-4">
+          <a href="#" class="bg-yellow-400 text-gray-800 rounded-full px-6 py-3 font-semibold hover:bg-yellow-500">Konsultasi Gratis</a>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <section class="bg-white py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -126,55 +110,259 @@
       </h2>
   
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Terpercaya" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Terpercaya</h3>
           <p class="text-sm lg:text-base text-gray-600">Berizin resmi PPIU & PIHK dari Kemenag RI</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Terbaik" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Terbaik</h3>
           <p class="text-sm lg:text-base text-gray-600">Pembimbing ibadah terbaik dan berpengalaman</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Berkualitas" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Berkualitas</h3>
           <p class="text-sm lg:text-base text-gray-600">Hotel standar internasional bintang 4 dan 5</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Resmi" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Resmi</h3>
           <p class="text-sm lg:text-base text-gray-600">Penyedia pelayanan umroh resmi di Indonesia</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="On Time" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">On Time</h3>
           <p class="text-sm lg:text-base text-gray-600">Maskapai penerbangan bintang 5</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Nyaman" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Nyaman</h3>
           <p class="text-sm lg:text-base text-gray-600">Armada terbaru yang nyaman dan eksklusif</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Profesional" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Profesional</h3>
           <p class="text-sm lg:text-base text-gray-600">Melayani dengan berpengalaman & profesional</p>
         </div>
   
-        <div class="bg-white rounded-lg shadow p-6">
+        <div class="bg-white rounded-lg shadow p-6 border border-gray-200">
           <img src="https://storage.googleapis.com/muslimpergi/uploads/gallery/pict/1231/Featurs_img-3.png" alt="Eksklusif" class="mx-auto h-12 mb-4" />
           <h3 class="text-lg font-semibold text-gray-900">Eksklusif</h3>
           <p class="text-sm lg:text-base text-gray-600">Perlengkapan travel eksklusif Al-Hasan Umroh Travel</p>
         </div>
       </div>
     </div>
+  </section>
+
+  <section class="bg-white py-32">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gap mb-8">
+        <div class="rounded-2xl overflow-hidden h-full">
+          <img src="https://www.jejakimani.com/assets/img/jejakimani/homepage/tentang-kami-res.jpg" alt="Travel">
+        </div>
+
+        <div class="border border-gray-300 bg-gray-100 p-6 rounded-2xl overflow-hidden">
+          <div class="font-bold text-[#154697] mb-6">Tentang Kami</div>
+          
+          <h1 class="font-semibold text-4xl mb-6">
+            Menjadi Sebaik-baiknya Pelayan Tamu Allah
+          </h1>
+
+          <p style="font-size: 20px; font-weight: 300;">
+            Al-hasan adalah travel haji, umroh dan halal tours yang menyediakan berbagai layanan untuk memudahkan umat Muslim dalam mewujudkan tujuan mulia. Sejak awal Al-hasan didirikan, kami berkomitmen untuk menjadi sebaik-baiknya pelayan para tamu Allah menuju Tanah Suci.
+          </p>
+          <br>
+
+          <p style="font-size: 20px; font-weight: 300;">
+            Tahun demi tahun kami lewati dengan semangat untuk senantiasa memperbaiki kualitas dan sistem pelayanan agar jamaah dapat beribadah dengan maksimal dan lebih nyaman. Melayani para tamu Allah ke Tanah Suci dan memfasilitasi ummat melihat dan mempelajari sejarah keIslaman di negara-negara muslim lainnya adalah tujuan dan kebahagiaan kami.
+          </p>
+          <br>
+
+          <p style="font-size: 20px; font-weight: 300;">H. Muhammad Rizaldy Latief</p>
+          <p style="font-size: 20px; font-weight: 300;">Presiden Direktur PT. Al-hasan Berkah Bersama</p>
+          <br>
+          <br>
+
+          <a href="http://www.jejakimani.com" class="text-yellow-800">
+            Lihat Detail
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="border border-gray-300 bg-gray-100 p-6 rounded-2xl overflow-hidden">
+          <div class="font-semibold text-4xl mb-4">Visi</div>
+
+          <p style="font-size: 20px;">“Menjadi biro haji, umroh, islamic dan halal tours terbesar di Indonesia dengan pelayanan prima.“</p>
+        </div>
+
+        <div class="border border-gray-300 bg-gray-100 p-6 rounded-2xl overflow-hidden col-span-2">
+          <div class="font-semibold text-4xl mb-4">Misi</div>
+
+          <ol class="list-decimal ml-6 text-4xl" style="font-size: 20px; line-height: 2em; font-weight: 300;">
+            <li>
+              <p>
+                Membangun hubungan interpersonal yang bersifat kekeluargaan antara <span style="font-weight: 600;">Al-hasan</span>
+                dengan jamaah maupun calon jamaah haji, umrah, Islamic dan halal tours <span style="font-weight: 600;">Al-hasan.</span>
+              </p>
+            </li>
+            <li>
+              <p>Menjaga kualitas syariat dalam setiap ibadah haji khusus dan umrah.</p>
+            </li>
+            <li>
+              <p>Terus menerus meningkatkan pelayanan haji, umrah, islamic dan halal tours dengan melayani jamaah sepenuh hati.
+              </p>
+            </li>
+            <li>
+              <p>Menjaga kualitas syariat dalam setiap ibadah haji khusus dan umrah.</p>
+            </li>
+            <li>
+              <p>
+                Memberi pelayanan terbaik kepada jamaah Islamic dan halal tours dengan
+                menyediakan makanan halal dan memfasilitasi tempat shalat selama program tersebut.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-32">
+    <div class="max-w-7xl mx-auto px-4 py-10">
+      <div class="text-left mb-8">
+        <h2 class="text-4xl font-semibold text-gray-900 mb-2">
+          Kenali Ustadz Pembimbing Al-hasan
+        </h2>
+        <div class="flex justify-between">
+          <p class="text-gray-600 text-lg">
+            Perjalanan akan jauh lebih bermakna dengan bimbingan para ustadz mumpuni
+          </p>
+          <div class="mt-2">
+            <a href="#" class="text-sm text-yellow-700 font-semibold inline-flex items-center">
+              Lihat Lebih banyak
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <div class="relative">
+            <img src="https://www.jejakimani.com/assets/img/jejakimani/ustadz/ustadz-andi.png" alt="Ustadz" class="w-full h-64 object-cover">
+            <div class="absolute top-4 left-4">
+              <img src="./assets/logo-2.png" alt="Al-hasan Logo" class="w-10">
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-gray-900">
+              Ustadz Dr. H. Hepi Andi Bastoni, M.A., M.Pd.I.
+            </h3>
+            <p class="text-sm text-yellow-700 font-semibold mt-1">Dosen, Penulis, Pebisnis</p>
+            <p class="text-sm text-gray-700 mt-6">
+              Aktif menulis buku dan dakwah yang berfokus pada Sirah Nabawiyah.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="inline-block text-gray-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <div class="relative">
+            <img src="https://www.jejakimani.com/assets/img/jejakimani/ustadz/ustadz-fauzil.png" alt="Ustadz" class="w-full h-64 object-cover">
+            <div class="absolute top-4 left-4">
+              <img src="./assets/logo-2.png" alt="Al-hasan Logo" class="w-10">
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-gray-900">
+              Ustadz Mohammad Fauzil Adhim, S.Psi.
+            </h3>
+            <p class="text-sm text-yellow-700 font-semibold mt-1">Ahli Parenting, Penulis</p>
+            <p class="text-sm text-gray-700 mt-6">
+              Aktif menulis dan dakwah di bidang parenting keluarga & PAUD.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="inline-block text-gray-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <div class="relative">
+            <img src="https://www.jejakimani.com/assets/img/jejakimani/ustadz/ustadz-jundi.png" alt="Ustadz" class="w-full h-64 object-cover">
+            <div class="absolute top-4 left-4">
+              <img src="./assets/logo-2.png" alt="Al-hasan Logo" class="w-10">
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-gray-900">
+              Ustadz H. Jundi Imam Syuhada, Lc., M.IRK.
+            </h3>
+            <p class="text-sm text-yellow-700 font-semibold mt-1">Pengajar, Penulis</p>
+            <p class="text-sm text-gray-700 mt-6">
+              Fokus keilmuan dalam dakwahnya pada fikih Syafi'i & tafsir Al-Qur'an.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="inline-block text-gray-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+          <div class="relative">
+            <img src="https://www.jejakimani.com/assets/img/jejakimani/ustadz/ustadz-eko.png" alt="Ustadz" class="w-full h-64 object-cover">
+            <div class="absolute top-4 left-4">
+              <img src="./assets/logo-2.png" alt="Al-hasan Logo" class="w-10">
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="text-lg font-bold text-gray-900">
+              Ustadz H. Eko Kholistio Putro, Lc., M.H
+            </h3>
+            <p class="text-sm text-yellow-700 font-semibold mt-1">Pendakwah, Pengajar</p>
+            <p class="text-sm text-gray-700 mt-6">
+              Pemegang sanad dengan spesialisasi pada hukum keluarga Islam.
+            </p>
+            <div class="mt-4">
+              <a href="#" class="inline-block text-gray-500">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center gap-3 mt-8">
+        <button class="w-10 h-10 rounded-full border border-gray-400 flex justify-center items-center">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button class="w-10 h-10 rounded-full border border-gray-400 flex justify-center items-center">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>    
   </section>
 
   <section class="bg-gray-50 py-32 px-4 sm:px-6 lg:px-8">
@@ -254,7 +442,7 @@
             </div>
           </div>
           <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
-            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <button class="bg-[#154697] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Lihat detail
             </button>
           </a>
@@ -328,7 +516,7 @@
             </div>
           </div>
           <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
-            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <button class="bg-[#154697] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Lihat detail
             </button>
           </a>
@@ -402,7 +590,7 @@
             </div>
           </div>
           <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
-            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <button class="bg-[#154697] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Lihat detail
             </button>
           </a>
@@ -476,7 +664,7 @@
             </div>
           </div>
           <a href="package-detail.html" class="p-4 border-t border-gray-200 flex justify-end">
-            <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <button class="bg-[#154697] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Lihat detail
             </button>
           </a>
@@ -484,7 +672,7 @@
       </div>
 
       <a href="package.html" class="flex justify-center mt-12">
-        <button class="bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer">
+        <button class="bg-[#154697] text-white font-semibold py-2 px-4 rounded-md hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 cursor-pointer">
           Lihat Semua Paket
         </button>
       </a>
@@ -495,7 +683,7 @@
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-start">
       <div>
         <h2 class="text-3xl font-bold">Ijin Resmi</h2>
-        <h3 class="text-[#326dcf] text-2xl font-bold mt-1">Al-Hasan Tour & Travel</h3>
+        <h3 class="text-[#154697] text-2xl font-bold mt-1">Al-Hasan Tour & Travel</h3>
         <p class="text-gray-600 mt-4 leading-relaxed">
           Untuk menjamin kenyamanan dan keamanan calon jamaah haji & umroh, maka sejak tahun 2020 kami telah
           mengantongi ijin resmi dari Kemenag sebagai biro travel umroh terpercaya
@@ -526,12 +714,12 @@
     <div class="max-w-7xl mx-auto">
       <div class="text-center">
         <h2 class="text-3xl font-bold">8 Prinsip</h2>
-        <h3 class="text-[#326dcf] text-2xl font-bold mt-1">Al-Hasan Tour & Travel</h3>
+        <h3 class="text-[#154697] text-2xl font-bold mt-1">Al-Hasan Tour & Travel</h3>
       </div>
 
       <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-center relative">
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             1
           </div>
           <h4 class="font-semibold mb-2">Budaya Perusahaan</h4>
@@ -541,7 +729,7 @@
         </div>
   
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             2
           </div>
           <h4 class="font-semibold mb-2">Orientasi</h4>
@@ -551,7 +739,7 @@
         </div>
   
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             3
           </div>
           <h4 class="font-semibold mb-2">Operasional</h4>
@@ -561,7 +749,7 @@
         </div>
   
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             4
           </div>
           <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
@@ -571,7 +759,7 @@
         </div>
 
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             5
           </div>
           <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
@@ -581,7 +769,7 @@
         </div>
 
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             6
           </div>
           <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
@@ -591,7 +779,7 @@
         </div>
 
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             7
           </div>
           <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
@@ -601,7 +789,7 @@
         </div>
 
         <div class="z-10 bg-gray-100 shadow rounded-lg p-8">
-          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#326dcf]">
+          <div class="w-10 h-10 mx-auto rounded-full text-white font-bold flex items-center justify-center mb-4 bg-[#154697]">
             8
           </div>
           <h4 class="font-semibold mb-2">Tujuan Asasi</h4>
@@ -624,7 +812,7 @@
   
       <div class="space-y-4">
         <div class="border border-gray-200 rounded-md overflow-hidden">
-          <button class="w-full flex justify-between items-center bg-blue-50 px-6 py-4 text-[#326dcf] font-semibold">
+          <button class="w-full flex justify-between items-center bg-blue-50 px-6 py-4 text-[#154697] font-semibold">
             Bagaimana tata cara pelaksanaan umrah?
             <span class="text-xl font-bold">−</span>
           </button>
@@ -678,21 +866,10 @@
     </div>
   </section>
 
-  <div class="bg-gray-700 py-12">
-    <div class="max-w-md mx-auto text-center">
-      <h2 class="text-2xl font-semibold text-white mb-4">Berlangganan Newsletter Kami</h2>
-      <p class="text-white mb-6 text-base">Dapatkan update terbaru, penawaran eksklusif, dan tips bermanfaat langsung ke inbox Anda.</p>
-      <div class="flex rounded-md shadow-sm">
-        <input type="email" class="flex-1 text-white min-w-0 block w-full px-3 py-2 rounded-none rounded-l-md border border-white placeholder-white focus:ring-white focus:border-white focus:outline-none sm:text-sm" placeholder="Masukkan alamat email Anda">
-        <button type="submit" class="bg-[#326dcf] hover:bg-[#326dcf] text-white font-semibold py-2 px-4 rounded-r-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#326dcf]">Berlangganan</button>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bg-[#326dcf] text-white py-12">
+  <footer class="bg-[#154697] text-white py-32">
     <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
-        <h2 class="text-xl font-bold mb-4">Tentang Kami</h2>
+        <h2 class="text-xl font-bold mb-10">Tentang Kami</h2>
         <p class="text-sm lg:text-base leading-relaxed">
           <span class="font-bold">Al-Hasan</span> adalah Biro Travel Haji dan Umroh yang terdaftar dan berizin resmi di Kementrian agama. Terdaftar atas nama PT Al-Hasan, dengan nomor ijin<br /><br />
           • Ijin PPIU : U.277 / 2021<br />
@@ -701,7 +878,7 @@
       </div>
 
       <div>
-        <h2 class="text-xl font-bold mb-4">Artikel</h2>
+        <h2 class="text-xl font-bold mb-10">Artikel</h2>
         <ul class="text-sm lg:text-base space-y-2">
           <li><a href="#" class="hover:underline">Keutamaan dan Adab Beribadah di Raudhah</a></li>
           <li><a href="#" class="hover:underline">10 Waktu-Waktu Doa Mustajab</a></li>
@@ -712,7 +889,7 @@
       </div>
 
       <div>
-        <h2 class="text-xl font-bold mb-4">Menu Tambahan</h2>
+        <h2 class="text-xl font-bold mb-10">Menu Tambahan</h2>
         <ul class="text-sm lg:text-base space-y-2">
           <li><a href="#" class="hover:underline">Kemitraan Umroh</a></li>
           <li><a href="#" class="hover:underline">Kontak</a></li>
@@ -722,7 +899,7 @@
       </div>
 
       <div>
-        <h2 class="text-xl font-bold mb-4">Kontak Kami</h2>
+        <h2 class="text-xl font-bold mb-10">Kontak Kami</h2>
         <ul class="text-sm lg:text-base space-y-2">
           <li class="flex items-start gap-2"><span><i class="fa fa-phone"></i></span> 0274-373953</li>
           <li class="flex items-start gap-2"><span><i class="fa fa-phone"></i></span> 0899-000-1234</li>
