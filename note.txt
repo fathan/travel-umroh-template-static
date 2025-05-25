@@ -1,0 +1,99 @@
+1. Tambahin floating yang ada di semua page buat WhatsApp contact detail                      [DONE]====
+2. Visi misi kepanjangan              
+    1. Font diganti lebih kecil                                                               [DONE]====
+
+    2. Foto visi misi diganti jangan pake travel lain                                         [DONE]====
+
+    3. Dijadiin satu bundle aja                                                               [DONE]====
+
+    4. Disatuin perizinan yg bawah ke section visi misi                                       [DONE]====
+
+    5. Nama dan detail direktur dihapus dari visi misi                                        [DONE]====
+
+3. Untuk instagram link, attach instagram si ustad                                            [DONE]====
+
+
+4. Bikin page detail per ustad
+    1. Tampilin 3 ustad aja                                                                   [DONE]====
+
+    2. Aktifitas pilih yang bagus2 aja                                                        [TODO]
+
+    3. Ada halaman detail ustad                                                               [TODO]
+
+
+5. Cari gambar paket yang lain                                                                [TODO]
+
+    1. Tampilin juga cashback                                                                 [TODO]
+
+6. Untuk data perizinan, minta data yang real                                                 [DONE]
+
+
+7. Di paket detail, tampilin benefit/fasilitas dari paket             
+    1. Tampilin gambar                                                                        [TODO]
+
+        1. Koper, Kain ihram, Selendang, Baju seragam                                         [TODO]
+
+    2. Tampilin opsi pembelian paket
+        1. Ada paket langsung sekaligus, misal 50 juta                                        [TODO]  
+        2. Ada paket cicilan dengan DP awal 2 juta                                            [TODO]
+        3. Setelah pilih paket cicilan, ada notifikasi di WhatsApp tentang progress           
+        4. Detail kata2 di provide mas U.T.
+
+8. 8 prinsip di take out                                                                      [DONE]====
+
+9. Faq dibikin menu baru lewat navigation menu                                                [DONE]====
+
+Page tnc
+1. Find and replace avia tour                                                                 [DONE]====
+
+Page informasi
+1. Artikel di take out                                                                        [DONE]====
+
+2. Galeri ngambil dari data benaran. Minta ke mas U.T.                                        [TODO]
+
+3. Testimonial                                                                                [DONE]
+
+4. Affiliasi
+    1. penjelasan Affiliasi secara detail                                                     [TODO]
+    2. Benefit Affiliasi cashback dari pembayaran jamaah                                      [TODO]
+    3. Form registration Affiliasi                                                            [TODO]
+        1. Di redirect ke login page
+        2. Kalau belum bisa login, user register terlebih dahulu      
+    4. Kontak kami detailed                                                                   [TODO]
+
+
+=======================================================================================================================================
+
+Page Kontak kami
+1. Tambahin maps                                                                              [DONE]
+
+2. Tambahin                                                                                   [DONE]
+    1. email
+    2. Address
+    3. phone
+
+
+=======================================================================================================================================
+
+Dashboard page
+1. Profil                                                                                     [TODO]
+2. Booking                                                                                    [TODO]
+    1. Pending
+    2. Sudah terlaksana
+    3. Gagal
+3. Afiliasi                                                                                   [TODO]
+    1. Ada form afiliasi
+    2. Ada persetujuan
+
+Flow checkout
+1. Persyaratan
+    1. Pasfoto
+    2. Passpor
+    3. KTP
+2. Hilangin 
+    1. fitur permintaan khusus
+    2. fitur tambah pemesanan
+3. Sistem single checkout
+
+
+Present: progress hari senin 26 may
