@@ -54,15 +54,15 @@ Page informasi
 3. Testimonial                                                                                [DONE]
 
 4. Affiliasi
-    1. penjelasan Affiliasi secara detail                                                     [TODO]
-    2. Benefit Affiliasi cashback dari pembayaran jamaah                                      [TODO]
-    3. Form registration Affiliasi                                                            [TODO]
+    1. penjelasan Affiliasi secara detail                                                     [DONE]
+    2. Benefit Affiliasi cashback dari pembayaran jamaah                                      [DONE]
+    3. Form registration Affiliasi                                                            [DONE]
         1. Di redirect ke login page
         2. Kalau belum bisa login, user register terlebih dahulu      
-    4. Kontak kami detailed                                                                   [TODO]
+    4. Kontak kami detailed                                                                   [DONE]
 
 
-=======================================================================================================================================
+====================================================================================================
 
 Page Kontak kami
 1. Tambahin maps                                                                              [DONE]
@@ -73,7 +73,7 @@ Page Kontak kami
     3. phone
 
 
-=======================================================================================================================================
+====================================================================================================
 
 Dashboard page
 1. Profil                                                                                     [TODO]
